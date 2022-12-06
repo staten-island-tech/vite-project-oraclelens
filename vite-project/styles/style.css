@@ -3,3 +3,18 @@
 body {
   font-size: 2rem;  
 }
+
+.animation {
+  background-color: pink; 
+  height: 90vh 
+}
+
+.header-animation{
+  font-size: 60px;
+  text-align: center; 
+  color: black;
+}
+
+#app {
+  height: 1000px; 
+}
