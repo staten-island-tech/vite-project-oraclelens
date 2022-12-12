@@ -4,18 +4,36 @@ body {
   font-size: 2rem;  
 }
 
-.animation {
-  background-color: pink; 
-  height: 90vh 
-}
-
-.header-animation{
-  font-size: 60px;
-  text-align: center; 
-  color: black;
-}
-
-#app {
-  height: 500px; 
+#titlecard {
   text-align: center;
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: space-evenly;
+}
+
+.title{
+  color: rgb(221, 120, 137);
+  width: 700px; 
+  padding: 5px;
+  border-radius: 15px; 
+  border: solid white 10px; 
+}
+
+#buttons{
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: space-evenly;
+  padding: 10px; 
+}
+
+.menuall, .patty, .cheese, .toppings{
+  border:solid white 10px; 
+  color: rgb(221, 120, 137); 
+  display: inline-block; 
+  cursor: pointer;
+  font-size:1.4rem; 
+  border-radius: 15px; 
+  width: 150px; 
+  height: 50px; 
+  background-color: pink;
 }

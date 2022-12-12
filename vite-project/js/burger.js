@@ -73,10 +73,4 @@ const burgeroptions = [
   },
 ];
 
-const products = {
-  getPatty: function () {
-    burgeroptions
-      .filter((el) => el.part === "patty")
-      .forEach((el) => console.log(el.name));
-  },
-};
+export { burgeroptions };
