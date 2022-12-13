@@ -26,7 +26,7 @@ body {
   padding: 10px; 
 }
 
-.menuall, .patty, .cheese, .toppings{
+#menuall, #patty, #cheese, #toppings{
   border:solid white 10px; 
   color: rgb(221, 120, 137); 
   display: inline-block; 
@@ -36,4 +36,28 @@ body {
   width: 150px; 
   height: 50px; 
   background-color: pink;
+}
+
+#box{
+  margin: 30px;
+  border:solid white 10px; 
+  color: rgb(221, 120, 137); 
+    border-radius: 5px;
+    padding-top: 20px; 
+    padding-bottom: 20px;
+    height: 1050px;
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-evenly;
+}
+
+.inner{
+  font-size:1.5rem;
+  align-items: center;
+  text-align: center;
+  padding: 16px; 
+  background: pink;
+  width: 300px; 
+  border:solid white 10px; 
+  height: 300px; 
 }

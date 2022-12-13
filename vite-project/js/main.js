@@ -2,19 +2,28 @@ import "../styles/style.css";
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
 // ..
-import { burgeroptions } from "../js/burger.js";
+import { burgeroptions } from "./burger";
+import { DOMSelectors } from "./dom";
 AOS.init();
 document.querySelector("#titlecard").innerHTML = `
 <h1 class=title>Make Your Own Burger</h1>`;
 
-const menu = {
-  getPatty: function () {
-    burgeroptions
-      .filter((el) => el.part === "patty")
-      .forEach((el) => {
-        console.log(el.name);
-        DOMSelectors.box.insertAdjacentHTML = `
-        <h2>${el.name}</h2>`;
-      });
-  },
-};
+burgeroptions.forEach((el) => {
+  DOMSelectors.box.insertAdjacentHTML(
+    "beforeend",
+    `
+      <div class="inner">
+      <p>${el.name}</p>
+      <img src="${el.img}.png" alt="add image">
+      <p>${el.calories}</p>
+      </div>`
+  );
+});
+
+burgeroptions
+  .filter((el) => el.part === "patty")
+  .forEach((el) => {
+    console.log(el.name);
+    /*DOMSelectors.box.insertAdjacentHTML = `
+        <h2>${el.name}</h2>`;*/
+  });
