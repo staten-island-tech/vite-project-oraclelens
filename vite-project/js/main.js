@@ -14,8 +14,8 @@ burgeroptions.forEach((el) => {
     `
       <div class="inner">
       <p>${el.name}</p>
-      <img src="${el.img}.png" alt="add image">
-      <p>${el.calories}</p>
+      <img class="abby" src="${el.img}" alt="add image">
+      <p class="cals">Calories: ${el.calories}</p>
       </div>`
   );
 });

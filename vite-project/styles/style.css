@@ -40,8 +40,6 @@ body {
 
 #box{
   margin: 30px;
-  border:solid white 10px; 
-  color: rgb(221, 120, 137); 
     border-radius: 5px;
     padding-top: 20px; 
     padding-bottom: 20px;
@@ -60,4 +58,18 @@ body {
   width: 300px; 
   border:solid white 10px; 
   height: 300px; 
+  margin-bottom: 20px;
+  color:white;
+  font-weight: 400;
+  background-color: rgb(221, 120, 137);
+  border-radius: 25px;
+}
+
+.abby{
+  height: 160px; 
+  border: solid rgb(221, 120, 137) 5px; 
+}
+
+.cals{
+  font-size: 1.2rem; 
 }
