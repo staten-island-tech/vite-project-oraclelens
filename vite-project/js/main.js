@@ -20,10 +20,38 @@ burgeroptions.forEach((el) => {
   );
 });
 
-burgeroptions
-  .filter((el) => el.part === "patty")
-  .forEach((el) => {
-    console.log(el.name);
-    /*DOMSelectors.box.insertAdjacentHTML = `
-        <h2>${el.name}</h2>`;*/
-  });
+const options = {
+  getToppings: function () {
+    burgeroptions
+      .filter((el) => el.part.includes(`toppings`))
+      .forEach((el) => {
+        console.log(el.name);
+        DOMSelectors.box.insertAdjacentElement = `
+          <h2>${el.name}</h2>`;
+      });
+  },
+  getCheese: function () {
+    burgeroptions
+      .filter((el) => el.part.includes(`cheese`))
+      .forEach((el) => {
+        console.log(el.name);
+        DOMSelectors.box.insertAdjacentElement = `
+          <h2>${el.name}</h2>`;
+      });
+  },
+  getMeat: function () {
+    burgeroptions
+      .filter((el) => el.part.includes(`patty`))
+      .forEach((el) => {
+        DOMSelectors.box.insertAdjacentHTML(
+          "beforeend",
+          `
+          <h2>${el.name}</h2>`
+        );
+      });
+  },
+};
+
+DOMSelectors.button3.addEventListener("click", function () {
+  options.getMeat();
+});
