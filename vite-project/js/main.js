@@ -20,38 +20,69 @@ burgeroptions.forEach((el) => {
   );
 });
 
+const remove = function () {
+  document.querySelectorAll(".inner").forEach((e) => e.remove());
+};
+
 const options = {
-  getToppings: function () {
-    burgeroptions
-      .filter((el) => el.part.includes(`toppings`))
-      .forEach((el) => {
+  getAll: function () {
+    document.getElementById("menuall").addEventListener("click", function () {
+      remove();
+      burgeroptions.forEach((el) => {
         console.log(el.name);
-        DOMSelectors.box.insertAdjacentElement = `
-          <h2>${el.name}</h2>`;
-      });
-  },
-  getCheese: function () {
-    burgeroptions
-      .filter((el) => el.part.includes(`cheese`))
-      .forEach((el) => {
-        console.log(el.name);
-        DOMSelectors.box.insertAdjacentElement = `
-          <h2>${el.name}</h2>`;
-      });
-  },
-  getMeat: function () {
-    burgeroptions
-      .filter((el) => el.part.includes(`patty`))
-      .forEach((el) => {
         DOMSelectors.box.insertAdjacentHTML(
           "beforeend",
           `
-          <h2>${el.name}</h2>`
+      <div class="inner">
+      <p>${el.name}</p>
+      <img class="abby" src="${el.img}" alt="add image">        
+      <p class=cals>Calories: ${el.calories}</p>
+      </div>`
         );
       });
+    });
+  },
+
+  getBurger: function () {
+    document.getElementById("patty").addEventListener("click", function () {
+      remove();
+      burgeroptions
+        .filter((el) => el.part.includes("patty"))
+        .forEach((el) => {
+          console.log(el.name);
+          DOMSelectors.box.insertAdjacentHTML(
+            "beforeend",
+            `
+        <div class="inner">
+        <p>${el.name}</p>
+        <img class="abby" src="${el.img}" alt="add image">        
+        <p class=cals>${el.calories}</p>
+        </div>`
+          );
+        });
+    });
+  },
+
+  getCheese: function () {
+    document.getElementById("cheese").addEventListener("click", function () {
+      remove();
+      burgeroptions
+        .filter((el) => el.part.includes("cheese"))
+        .forEach((el) => {
+          console.log(el.name);
+          DOMSelectors.box.insertAdjacentHTML(
+            "beforeend",
+            `
+          <div class="inner">
+          <p>${el.name}</p>
+          <img class="abby" src="${el.img}" alt="add image">        
+          <p class=cals>${el.calories}</p>
+          </div>`
+          );
+        });
+    });
   },
 };
-
-DOMSelectors.button3.addEventListener("click", function () {
-  options.getMeat();
-});
+options.getAll();
+options.getBurger();
+options.getCheese();
