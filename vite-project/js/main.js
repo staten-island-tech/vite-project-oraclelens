@@ -1,10 +1,7 @@
 import "../styles/style.css";
 import AOS from "aos";
-import "aos/dist/aos.css"; // You can also use <link> for styles
-// ..
 import { burgeroptions } from "./burger";
 import { DOMSelectors } from "./dom";
-AOS.init();
 document.querySelector("#titlecard").innerHTML = `
 <h1 class=title>Make Your Own Burger</h1>`;
 
@@ -56,7 +53,7 @@ const options = {
         <div class="inner">
         <p>${el.name}</p>
         <img class="abby" src="${el.img}" alt="add image">        
-        <p class=cals>${el.calories}</p>
+        <p class=cals>Calories: ${el.calories}</p>
         </div>`
           );
         });
@@ -76,13 +73,57 @@ const options = {
           <div class="inner">
           <p>${el.name}</p>
           <img class="abby" src="${el.img}" alt="add image">        
-          <p class=cals>${el.calories}</p>
+          <p class=cals>Calories: ${el.calories}</p>
           </div>`
           );
         });
     });
   },
+
+  getToppings: function () {
+    document.getElementById("toppings").addEventListener("click", function () {
+      remove();
+      burgeroptions
+        .filter((el) => el.part.includes("toppings"))
+        .forEach((el) => {
+          console.log(el.name);
+          DOMSelectors.box.insertAdjacentHTML(
+            "beforeend",
+            `
+          <div class="inner">
+          <p>${el.name}</p>
+          <img class="abby" src="${el.img}" alt="add image">        
+          <p class=cals>Calories: ${el.calories}</p>
+          </div>`
+          );
+        });
+    });
+  },
+
+  getVegetarian: function () {
+    document
+      .getElementById("vegetarian")
+      .addEventListener("click", function () {
+        remove();
+        burgeroptions
+          .filter((el) => el.vegetarian.includes("yes"))
+          .forEach((el) => {
+            console.log(el.name);
+            DOMSelectors.box.insertAdjacentHTML(
+              "beforeend",
+              `
+          <div class="inner">
+          <p>${el.name}</p>
+          <img class="abby" src="${el.img}" alt="add image">        
+          <p class=cals>Calories: ${el.calories}</p>
+          </div>`
+            );
+          });
+      });
+  },
 };
 options.getAll();
 options.getBurger();
 options.getCheese();
+options.getToppings();
+options.getVegetarian();
